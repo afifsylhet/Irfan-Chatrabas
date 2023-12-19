@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import Room from "./Room";
-import Paginations from "./Paginations";
+import RoomPagenation from "./RoomPagenation";
 import { Container, Row } from "react-bootstrap";
 import { fetchRooms } from "../../features/slice/roomSlice";
 
@@ -35,10 +35,10 @@ const Rooms = () => {
           ))}
         </Row>
         <br />
-        {/* Bootstrap Paginations} */}
+        {/* Bootstrap RoomPagenation} */}
         {roomCount > rooms?.length && (
           <div className="d-flex justify-content-center">
-            <Paginations
+            <RoomPagenation
               roomCount={roomCount}
               resultPerPage={resultPerPage}
               rooms={rooms}

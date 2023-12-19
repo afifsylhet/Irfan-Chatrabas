@@ -28,6 +28,9 @@ import EditExpence from "./components/Dashboard/EditExpence";
 import AddRoom from "./components/Dashboard/AddRoom";
 import Rooms from "./components/Dashboard/Rooms";
 import EditRoom from "./components/Dashboard/EditRoom";
+import IncomeSearch from "./components/Dashboard/IncomeSearch";
+import ExpenceSearch from "./components/Dashboard/ExpenceSearch";
+import RoomSearch from "./components/Dashboard/RoomSearch";
 
 function App() {
 
@@ -66,8 +69,12 @@ function App() {
         <Route path="/addRoom" element={<AddRoom />} />
         <Route path="/rooms" element={<Rooms />} />
         <Route path="/room/update/:roomId" element={<EditRoom/>} />
-
-
+        <Route path="/incomeSearch" element={<IncomeSearch />} />
+        <Route path="/incomes/:keyword" element={<Incomes />} />
+        <Route path="/expenceSearch" element={<ExpenceSearch/>} />
+        <Route path="/expences/:keyword" element={<Expences />} />
+        <Route path="/roomSearch" element={<RoomSearch/>} />
+        <Route path="/rooms/:keyword" element={<Rooms />} />
       </Routes>
     </BrowserRouter>
   );

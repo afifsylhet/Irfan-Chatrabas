@@ -3,9 +3,9 @@ import { fetchBorders } from "../../features/slice/BordersSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import Income from "./Income";
-import Paginations from "./Paginations";
 import { Container, Row } from "react-bootstrap";
 import { fetchIncomes } from "../../features/slice/incomeSlice";
+import IncomePagenation from "./IncomePagenation";
 
 const Incomes = () => {
   const dispatch = useDispatch();
@@ -36,10 +36,10 @@ const Incomes = () => {
           ))}
         </Row>
         <br />
-        {/* Bootstrap Paginations} */}
+        {/* Bootstrap IncomePagenation} */}
         {incomeCount > incomes?.length && (
           <div className="d-flex justify-content-center">
-            <Paginations
+            <IncomePagenation
               incomeCount={incomeCount}
               resultPerPage={resultPerPage}
               incomes={incomes}

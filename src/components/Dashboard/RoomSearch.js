@@ -2,16 +2,16 @@ import React, { useState } from "react";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 
-const Search = () => {
+const RoomSearch = () => {
   const [keyword, setKeyword] = useState("");
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (keyword.trim()) {
-      navigate(`/borders/${keyword}`);
+      navigate(`/rooms/${keyword}`);
     } else {
-      navigate("/borders");
+      navigate("/rooms");
     }
   };
 
@@ -54,4 +54,4 @@ const Search = () => {
   );
 };
 
-export default Search;
+export default RoomSearch;

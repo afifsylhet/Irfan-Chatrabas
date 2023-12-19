@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate, useParams } from "react-router-dom";
-import { deleteBorderData, fetchBorderDetails } from "../../features/slice/BordersSlice";
+import {
+  deleteBorderData,
+  fetchBorderDetails,
+} from "../../features/slice/BordersSlice";
 import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import { addNewIncome } from "../../features/slice/incomeSlice";
 
@@ -42,14 +45,18 @@ const BorderDetails = ({ params }) => {
   const handleIncomeSubmit = (event) => {
     event.preventDefault();
     dispatch(addNewIncome(formData));
-    formData.deposit = 0;
-    formData.monthlyFee = 0;
-    formData.developmentFee = 0;
+
+    const resetFormData = {
+      deposit: 0,
+      monthlyFee: 0,
+      developmentFee: 0,
+    };
+    setFormData(resetFormData);
   };
 
   const deleteBorderHandler = () => {
     dispatch(deleteBorderData(id));
-    navigate("/borders")
+    navigate("/borders");
   };
 
   return (
@@ -143,7 +150,7 @@ const BorderDetails = ({ params }) => {
         <hr />
         <br />
 
-        // Add Income
+        {/* Add Income */}
         <div>
           <h2 className="text-center fw-semibold">Add Deposit</h2>
           <div>

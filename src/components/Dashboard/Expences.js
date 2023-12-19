@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { fetchBorders } from "../../features/slice/BordersSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import Expence from "./Expence";
-import Paginations from "./Paginations";
+import ExpencePagenation from "./ExpencePagenation";
 import { Container, Row } from "react-bootstrap";
 import { fetchExpence } from "../../features/slice/expenceSlice";
 
@@ -35,10 +34,10 @@ const Expences = () => {
           ))}
         </Row>
         <br />
-        {/* Bootstrap Paginations} */}
+        {/* Bootstrap ExpencePagenation} */}
         {expenceCount > expences?.length && (
           <div className="d-flex justify-content-center">
-            <Paginations
+            <ExpencePagenation
               expenceCount={expenceCount}
               resultPerPage={resultPerPage}
               expences={expences}

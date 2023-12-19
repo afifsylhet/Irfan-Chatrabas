@@ -41,6 +41,7 @@ const EditIncome = () => {
     navigate("/incomes")
   };
 
+
   return (
     <>
     <br/>

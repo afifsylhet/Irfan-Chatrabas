@@ -2,16 +2,16 @@ import React, { useState } from "react";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 
-const Search = () => {
+const IncomeSearch = () => {
   const [keyword, setKeyword] = useState("");
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (keyword.trim()) {
-      navigate(`/borders/${keyword}`);
+      navigate(`/incomes/${keyword}`);
     } else {
-      navigate("/borders");
+      navigate("/incomes");
     }
   };
 
@@ -54,4 +54,4 @@ const Search = () => {
   );
 };
 
-export default Search;
+export default IncomeSearch;
